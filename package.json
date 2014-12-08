@@ -23,10 +23,10 @@
   },
   "scripts": {
     "test-node": "TEST_DB=testdb,http://localhost:5984/testdb istanbul test ./node_modules/mocha/bin/_mocha test/test.js -- -R spec",
-    "test-browser": "./bin/test-browser.js",
+    "test-browser": "node ./bin/test-browser.js",
     "jshint": "jshint -c .jshintrc *.js test/test.js",
     "test": "npm run jshint && ./bin/run-test.sh",
-    "build": "mkdir -p dist && browserify index.js -o dist/pouchdb.replication-stream.js && npm run min",
+    "build": "mkdirp dist && browserify index.js -o dist/pouchdb.replication-stream.js && npm run min",
     "min": "uglifyjs dist/pouchdb.replication-stream.js -mc > dist/pouchdb.replication-stream.min.js",
     "dev": "browserify test/test.js > test/test-bundle.js && npm run dev-server",
     "dev-server": "node ./bin/dev-server.js",
