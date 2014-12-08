@@ -29,7 +29,7 @@
     "build": "mkdir -p dist && browserify index.js -o dist/pouchdb.replication-stream.js && npm run min",
     "min": "uglifyjs dist/pouchdb.replication-stream.js -mc > dist/pouchdb.replication-stream.min.js",
     "dev": "browserify test/test.js > test/test-bundle.js && npm run dev-server",
-    "dev-server": "./bin/dev-server.js",
+    "dev-server": "node ./bin/dev-server.js",
     "coverage": "npm test --coverage && istanbul check-coverage --lines 100 --function 100 --statements 100 --branches 100"
   },
   "dependencies": {
